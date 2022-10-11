@@ -8,7 +8,11 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "./like_toggle"
+import "./comment_toggle"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import $ from 'jquery';
+global.$ = jQuery;
