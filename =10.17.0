@@ -1,0 +1,12 @@
+
+> node@18.13.0 preinstall /home/luiz/PROJETOS/Social_Networking/node_modules/node
+> node installArchSpecificPackage
+
++ node-linux-x64@18.13.0
+added 1 package in 55.159s
+found 0 vulnerabilities
+
+
+> core-js@3.22.3 postinstall /home/luiz/PROJETOS/Social_Networking/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
