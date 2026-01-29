@@ -4,10 +4,16 @@
     <%= link_to post.user.name, post.user == current_user ? user_profile_path : user_user_path(post.user) %>
     
     <% if post.user == current_user %>
-      <%= link_to user_post_path(post), method: :delete, data: {confirm: "Você tem certeza que deseja apagar esse post?"}, class: "close text-white" do %>
-        <span aria-hidden="true">&times;</span>
-      <% end %>
+      <%= button_to user_post_path(post),
+      method: :delete,
+      data: { confirm: "Você tem certeza que deseja apagar esse post?" },
+      class: "close text-white",
+      form: { style: "display: inline" },
+      style: "background: none; border: none; padding: 0;" do %>
+      <span aria-hidden="true">&times;</span>
     <% end %>
+<% end %>
+
   </div>
   <div class="card-body">
     <small class="text-muted"><%= post.created_at.strftime("%d/%m/%Y %H:%M") %></small>

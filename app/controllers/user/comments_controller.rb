@@ -4,25 +4,27 @@ class User::CommentsController < UserController
       f_params = form_params.merge(user: current_user)
       @comment = Comment.new(f_params)
       @post = @comment.post
-  
+
       if @comment.save
-        respond_to do |format|
-          format.js { render "create" }
-        end
+        redirect_back fallback_location: user_profile_path
+      else
+        redirect_back fallback_location: user_profile_path, alert: "Erro ao criar comentário"
       end
     end
+
   
     def destroy
-      @comment = Comment.find_by(id: params[:id])
+      @comment = Comment.find(params[:id])
       @post = @comment.post
-  
+
       if @comment.destroy
         respond_to do |format|
-          format.js { render "destroy" }
+          format.html { redirect_to user_profile_path(@post) }
+          format.json { head :no_content }
         end
       end
     end
-  
+   
   
     private
   

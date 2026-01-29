@@ -9,7 +9,7 @@ class User::PostsController <UserController
         if @post.save
             redirect_to user_profile_path
         else
-            render "user/profile/show"
+            redirect_to user_profile_path
         end
     end
 
@@ -17,7 +17,7 @@ class User::PostsController <UserController
         post = current_user.posts.find(params[:id])
         post.destroy
         
-        redirect_to user_profile_path,
+        redirect_to user_profile_path
         
     end
 
