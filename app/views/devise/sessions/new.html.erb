@@ -3,7 +3,9 @@
     <div class="card">
       <div class="p-4 p-sm-5">
         <div class="d-flex justify-content-center align-items-center pb-2 mb-4">
-          <%= image_tag('logo', style: 'height: 90px;') %>
+          <%= link_to new_user_session_path do %>
+              <%= image_tag('logo', style: 'height: 120px; margin: 0;') %>
+          <% end %>
         </div>
 
         <% if resource_name == :admin %>
@@ -31,6 +33,17 @@
         <%= link_to new_user_registration_path, class: "d-flex justify-content-center align-items-center mt-4" do %>
         Cadastrar
         <% end %>
+        <% if resource_name == :user %>
+        <div class="d-flex justify-content-center mt-3">
+          <%= link_to "Área Administrativa",new_admin_session_path,
+          class: "small text-decoration-none text-muted" %>
+        </div>
+          
+
+  </div>
+<% end %>
+
+
       <% end %>
       </div>
     </div>
