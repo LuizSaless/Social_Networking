@@ -61,7 +61,7 @@ O **Social Networking** é uma aplicação web que simula uma rede social básic
 - **Frontend:** Javascript/ css / html
 - **Backend:** Ruby on Rails
 - **Banco de Dados:** Postgresql
-- **Deploy:** Heroku / Vercel
+- **Deploy:** Render
 - **Estilização:** CSS / Bootstrap 
 
 ---
